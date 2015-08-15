@@ -11,14 +11,19 @@ install:
     - go get github.com/gorilla/mux
     - go get github.com/stretchr/testify/assert
     - go get github.com/t-yuki/gocover-cobertura
+    - go get github.com/jstemmer/go-junit-report
+    - go get code.google.com/p/go.tools/cmd/cover
 
 before_script:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
 
 script:
-    - go test -covermode=count -coverprofile=count.out
+    - go test -covermode=count -coverprofile=count.out -v | go-junit-report > junit.xml
+
+after_script:
     - $GOPATH/bin/gocover-cobertura < count.out > shippable/codecoverage/coverage.xml
+    - mv $PWD/junit.xml $PWD/shippable/testresults
 
 after_success:
     - goveralls -coverprofile=count.out -service=shippable -repotoken $COVERALLS_TOKEN
