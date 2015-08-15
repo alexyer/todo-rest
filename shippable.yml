@@ -19,7 +19,7 @@ before_script:
     - mkdir -p shippable/codecoverage
 
 script:
-    - go test -covermode=count -coverprofile=count.out -v | $GOPATH/go-junit-report > junit.xml
+    - go test -covermode=count -coverprofile=count.out -v | $GOPATH/bin/go-junit-report > junit.xml
 
 after_script:
     - $GOPATH/bin/gocover-cobertura < count.out > shippable/codecoverage/coverage.xml
