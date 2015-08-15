@@ -20,10 +20,11 @@ before_script:
 
 script:
     - go test -covermode=count -coverprofile=count.out -v | $GOPATH/bin/go-junit-report > junit.xml
+    - $GOPATH/bin/gocover-cobertura < count.out > coverage.xml
 
 after_script:
-    - $GOPATH/bin/gocover-cobertura < count.out > shippable/codecoverage/coverage.xml
     - mv $PWD/junit.xml $PWD/shippable/testresults
+    - mv $PWD/coverage.xml $PWD/shippable/codecoverage
 
 after_success:
     - $GOPATH/bin/goveralls -coverprofile=count.out -service=shippable -repotoken $COVERALLS_TOKEN
