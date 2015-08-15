@@ -3,8 +3,8 @@ language: go
 go:
     - release
 
-- secure:
-    gxd5K77L0W1jBqSn7djeSgZatI549ByU6sf4zqz2LdrPERyoS9GEAe3Boq76U7CJCEJege1Hrobq8b5NbZA9usddSEMoEDhpluU6pFWdLWIbol1HhH5NYBdzTZzBtx9KHIMT7fsGYmXK7yiO8Izt4nbMwrgYYc9MCgP8p+CkCA8ePEAXZXXnWatUHn/TrPc3IQCA+MaFHQ3prpYwGTfqm/OVr87dNQY1/7a9KpqSDtLYe19EIZVsCx/GG/eLz8ZhOOBGsVml0t3ptq3AUmxdw+OWEN1KLBhBR1L4662wK4TtgmdxjYN7bUZVgD4Kf/ppqo6K5yANVbussx4K71FzXA==
+env:
+    - secure: gxd5K77L0W1jBqSn7djeSgZatI549ByU6sf4zqz2LdrPERyoS9GEAe3Boq76U7CJCEJege1Hrobq8b5NbZA9usddSEMoEDhpluU6pFWdLWIbol1HhH5NYBdzTZzBtx9KHIMT7fsGYmXK7yiO8Izt4nbMwrgYYc9MCgP8p+CkCA8ePEAXZXXnWatUHn/TrPc3IQCA+MaFHQ3prpYwGTfqm/OVr87dNQY1/7a9KpqSDtLYe19EIZVsCx/GG/eLz8ZhOOBGsVml0t3ptq3AUmxdw+OWEN1KLBhBR1L4662wK4TtgmdxjYN7bUZVgD4Kf/ppqo6K5yANVbussx4K71FzXA==
 
 install:
     - go get github.com/mattn/goveralls
