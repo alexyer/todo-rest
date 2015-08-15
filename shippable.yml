@@ -26,4 +26,4 @@ after_script:
     - mv $PWD/junit.xml $PWD/shippable/testresults
 
 after_success:
-    - goveralls -coverprofile=count.out -service=shippable -repotoken $COVERALLS_TOKEN
+    - $GOPATH/bin/goveralls -coverprofile=count.out -service=shippable -repotoken $COVERALLS_TOKEN
